@@ -1,0 +1,7 @@
+Hi Helen, use this time to understand how insights is working especially the following components:
+ClickMap Registration and Storage in Mongo
+ClickMap fetch to UI and how it gets rendered with the clickmarker data in Vertica
+The table component
+The graph component
+The filter component
+Whats stored in Mongo for Insights (based on what I’d shared with you the other day)
