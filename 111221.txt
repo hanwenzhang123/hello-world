@@ -1,0 +1,89 @@
++ insights
+  + components
+    + chartComponents
+    + filters
+    + graphComponents
+    + table
+  + screens
+    + campaign
+	- AnalyticsCampaigns.js
+    + clickmap
+	- AnalyticsClickMap.js
+    + geo
+	- AnalyticsGeo.js
+    + lob
+	- AnalyticsLOB.js
+  + utils
+    - DataProcessFunc.js
+    - DataRequesters.js
+    - ErrorComponent.js
+  - AnalyticsContext.js
+  - AnalyticsMain.js
+  - ClickmapList.js
+  - SwitchingComponent.js
+
+
+
++ insights
+  + components
+    + chartComponents
+	- GeoChart.js
+	- GeoJSON.js
+    + filters
+    + graphComponents
+	- AnalyticsGraph.js
+    + table
+	- InsightsTable.js
+    - Header.js (AnalyticsHeader)
+	<HeaderContainer> <HeaderLeft /> <HeaderRight /> </HeaderContainer>
+    - FilterFlow.js
+	<Breadcrumbs />
+    - FilterNav.js
+	{openFilters && ( <FiltersProvider> <CreateFilters /> </FiltersProvider> )}
+	<ViewsPopover> <ViewsSection> <ViewsDialog /> </ViewsSection> </ViewsPopover>
+	<Card />
+	<Calendar />
+    - InsightTableContainer.js
+	<TableHeader />
+	<Modal> <TableColumnSetting /> </Modal> 
+	<InsightsTable />
+  + screens
+    + campaign
+	- AnalyticsCampaigns.js
+		<AnalyticsGraph />
+		<InsightsTableContainer />
+    + clickmap
+	- AnalyticsClickMap.js
+		<InsightsTableContainer />
+    + geo
+	- AnalyticsGeo.js
+		<AnalyticsGraph />
+		<InsightsTableContainer />
+    + lob
+	- AnalyticsLOB.js
+		<AnalyticsGraph />
+		<InsightsTableContainer />
+  + utils
+    - DataProcessFunc.js
+    - DataRequesters.js
+    - ErrorComponent.js
+  - AnalyticsContext.js
+  - AnalyticsMain.js
+          {(loading || loadingpr || loadingcnt) && <RunningBlockSpinner />}
+          {screens && <AnalyticsHeader />}
+          <FiltersFlow />
+          <FiltersNav />
+          {screens === 'campaign' && ( <CampaignsScreen/> )}
+          {screens === 'lob' && ( <LOBScreen/> )}
+          {screens === 'geo' && ( <GeoScreen/> )}
+          {screens === 'clickmap' && <ClickmapList setFlowArr={setFlowArr} />}
+  - ClickmapList.js
+	<Tooltip />
+	<Measure> 
+		<Modal> <TableColumnSetting /> </Modal> 
+		<MaterialTable />
+	</Measure>
+	{loading && <RunningBlockSpinner />}
+  - SwitchingComponent.js
+	<InfoIcon />
+	<Popover />
